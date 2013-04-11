@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130411002302) do
 
-  create_table "employment", :force => true do |t|
-    t.integer "date"
-    t.integer "population"
-    t.integer "labour_force"
-    t.string  "employmentcol", :limit => 45
-  end
-
   create_table "graphs", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -30,15 +23,6 @@ ActiveRecord::Schema.define(:version => 20130411002302) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name",      :limit => 45,                 :null => false
-    t.string   "email",     :limit => 45,                 :null => false
-    t.datetime "hashdate",                                :null => false
-    t.string   "resetkey",  :limit => 128
-    t.string   "password",  :limit => 45,                 :null => false
-    t.integer  "is_active", :limit => 1,   :default => 1
   end
 
 end
