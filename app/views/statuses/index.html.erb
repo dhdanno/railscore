@@ -11,7 +11,7 @@
 
 <% @statuses.each do |status| %>
   <tr>
-    <td>Name</td>
+    <td><strong><%= status.user.full_name %></strong></td>
     <td><%= status.content %></td>
     <td><%= link_to 'Show', status %></td>
     <td><%= link_to 'Edit', edit_status_path(status) %></td>
