@@ -7,59 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Rails App</a>
+  		      <ul class="nav">
+    		      <li class="active"><a href="#">Home</a></li>
+    		      <li><%= link_to "All Statuses", statuses_path %></li>
+    		      <li><a href="#">Link</a></li>
+  		      </ul>
+            <ul class="nav pull-right">
+              <% if user_signed_in? %>
+                <li><%= link_to current_user.full_name, edit_user_registration_path %> </li>
+                <li><%= link_to "Log Out", logout_path %> </li>
+              <% else %>
+                <li><%= link_to "Create Account", register_path %> </li>
+                <li><%= link_to "Log In", login_path %> </li>
+              <% end %>
+            </ul>
+		    </div>
+      </div>
+    </div> 
+    <div class="container">  
 
+      <% flash.each do |type, message| %>
 
-
-<div class="container-fluid">
-  <div class="row-fluid">
-
-
-
-    <div class="span2">
-      <p>sidebar</p>
-    </div>
-    <div class="span10">
-		<div class="navbar navbar-inverse">
-		  <div class="navbar-inner">
-		    <a class="brand" href="#">Rails App</a>
-		    <ul class="nav">
-		      <li class="active"><a href="#">Home</a></li>
-		      <li><%= link_to "All Statuses", statuses_path %></li>
-		      <li><a href="#">Link</a></li>
-		    </ul>
-        <ul class="nav pull-right">
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.full_name, edit_user_registration_path %> </li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %> </li>
-          <% else %>
-            <li><%= link_to "Create Account", new_user_registration_path %> </li>
-            <li><%= link_to "Log In", new_user_session_path %> </li>
-          <% end %>
-        </ul>
-
-		  </div>
-          <% if flash[:notice] %>
-            <div class="alert alert-success">
+          <div class="alert <%= flash_class type %>">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <%= flash[:notice] %>
+              <%= message %>
             </div>
-          <% end %>
+      
+      <% end %> 
           
-          <% if flash[:error] %>
-            <div class="alert alert-error">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <%= flash[:error] %>
-            </div>
-          <% end %>
-
-		</div>
-
-
 
     	<%= yield %>
-    </div>
-  </div>
-</div>
-
+    </div>  
 </body>
 </html>
