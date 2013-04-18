@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="span4">
+	<div class="span6">
 
 	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well"}) do |f| %>
 
@@ -12,7 +12,7 @@
 
 
 	  <% if devise_mapping.rememberable? -%>
-	    <div><%= f.input :remember_me, as: :boolean %></div>
+	    <p><%= f.input :remember_me, as: :boolean %></p>
 	  <% end -%>
 
 	  <div><%= f.button :submit, "Sign in" %></div>
@@ -24,7 +24,7 @@
 	<%= render "devise/shared/links" %>
 	</div>
 
-	<div class="span8">
-		<h2>Signing in is easy</h2>
+	<div class="span6">
+		<h3>Signing in is easy</h3>
 	</div>
 </div>

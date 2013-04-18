@@ -1,12 +1,25 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="span6">
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <% if devise_error_messages! != "" %>
+      <div class="alert warning signup">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= devise_error_messages! %>
+      </div>  
+    <% end %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+    <fieldset>
+    	<legend>Forgot your password?</legend>
 
-<%= render "devise/shared/links" %>
+	<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), html: {class: "well"}) do |f| %>
+
+	  <%= f.input :email %>
+
+	  <div><%= f.submit "Send me reset password instructions" %></div>
+	<% end %>
+	</fieldset>
+
+	<%= render "devise/shared/links" %>
+ </div>
+</div>

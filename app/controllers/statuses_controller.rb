@@ -1,4 +1,7 @@
 class StatusesController < ApplicationController
+
+  before_filter :authenticate_user!, :only => [:index, :edit, :create, :destroy]
+
   # GET /statuses
   # GET /statuses.json
   def index
