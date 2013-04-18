@@ -1,8 +1,6 @@
 dan:
-
   first_name: "dan"
   last_name: "k"
-  email: "dan@dan.com"
   profile_name: "dank"
-  password: "password"
-  password_confirmation: "password"
+  email: "dan@dan.com"
+  encrypted_password: "test"

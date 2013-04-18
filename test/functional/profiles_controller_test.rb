@@ -7,3 +7,7 @@ class ProfilesControllerTest < ActionController::TestCase
   end
 
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
