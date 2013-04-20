@@ -8,7 +8,7 @@ gem 'rails', '3.2.13'
 gem 'simple_form'
 gem 'devise'
 gem 'sqlite3'
-gem 'mysql2'
+#gem 'mysql2'
 
 
 # Gems used only for assets and not required

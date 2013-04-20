@@ -1,5 +1,8 @@
 Graph::Application.routes.draw do
   
+  resources :student_profiles
+
+
   get "profiles/show"
 
   devise_for :users
