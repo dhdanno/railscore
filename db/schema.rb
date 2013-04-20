@@ -11,13 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420174131) do
+ActiveRecord::Schema.define(:version => 20130420210506) do
 
   create_table "advertisments", :force => true do |t|
     t.string   "content"
     t.string   "requiredskills"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "business_profiles", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "graphs", :force => true do |t|
@@ -33,6 +40,13 @@ ActiveRecord::Schema.define(:version => 20130420174131) do
   end
 
   add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
+
+  create_table "student_profiles", :force => true do |t|
+    t.string   "name"
+    t.integer  "userID"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

@@ -1,5 +1,8 @@
 Graph::Application.routes.draw do
   
+  resources :business_profiles
+
+
   resources :student_profiles
 
 

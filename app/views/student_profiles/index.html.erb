@@ -12,7 +12,7 @@
 <% @student_profiles.each do |student_profile| %>
   <tr>
     <td><%= student_profile.name %></td>
-    <td><%= student_profile.userid %></td>
+    <td><%= student_profile.userID %></td>
     <td><%= link_to 'Show', student_profile %></td>
     <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
     <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
